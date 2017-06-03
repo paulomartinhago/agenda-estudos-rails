@@ -1,0 +1,36 @@
+<div class="basic-grey">
+  <%= render partial: "/partials/header" %>
+
+  <p id="notice"><%= notice %></p>
+
+  <h1>Contacts (<%= @contacts.count %>)</h1>
+  <h2>Controller: <%= params[:controller] %></h2>
+
+  <table width="100%">
+    <thead>
+      <tr>
+        <th align="left"><%= @contacts.model.human_attribute_name("name") %></th>
+        <th align="left"><%= @contacts.model.human_attribute_name('kind') %></th>
+        <th align="left" colspan="3">Options</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.name %></td>
+          <td><%= contact.kind.description %></td>
+          <td><%= link_to t('buttons.show'), contact %></td>
+          <td><%= link_to t('buttons.edit'), edit_contact_path(contact) %></td>
+          <td><%= link_to t('buttons.destroy'), contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <%= paginate @contacts %>
+
+  <br>
+  <%= link_to t('buttons.new'), new_contact_path %>
+</div>

@@ -1,0 +1,62 @@
+hr {
+    margin: 10px 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+div#resultados {
+
+    text-align: center;
+	position: relative;
+
+    div.row {
+        position: relative;
+    	border-bottom: 2px solid #EEE;
+        margin: 10px 0;
+    }
+
+    div.title {
+        margin-top: 0;
+        padding: 12px 0 10px;
+    	font-size: 12px;
+    	font-weight: bold;
+        z-index: 10;
+    	background-color: #fff;
+    	border-bottom: 2px solid #EEE;
+    }
+
+    .coluna-seguradora a {
+        cursor: pointer;
+    }
+
+    .coluna-valor a {
+        cursor: pointer;
+    }
+
+    .coluna-mensagem a {
+        cursor: pointer;
+    }
+
+    div.drop-active {
+      	border-color: #aaa!important;
+    }
+
+    div.can-drop {
+      	transition: background-color 0.3s;
+    }
+
+    @media (max-width: 991px) {
+        div.title {
+            font-size: 12px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    }
+
+}
